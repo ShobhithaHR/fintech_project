@@ -1,0 +1,31 @@
+import requests
+import pandas as pd
+
+schemes = {
+    "HDFC_Top100": 125497,
+    "SBI_Bluechip": 119551,
+    "ICICI_Bluechip": 120503,
+    "Nippon_LargeCap": 118632,
+    "Axis_Bluechip": 119092,
+    "Kotak_Bluechip": 120841
+}
+
+for name, code in schemes.items():
+
+    try:
+        url = f"https://api.mfapi.in/mf/{code}"
+
+        response = requests.get(url)
+
+        data = response.json()
+
+        df = pd.DataFrame(data["data"])
+
+        filename = f"data/raw/{name}_live_nav.csv"
+
+        df.to_csv(filename, index=False)
+
+        print(f"{name} saved successfully")
+
+    except Exception as e:
+        print(f"Error fetching {name}: {e}")
