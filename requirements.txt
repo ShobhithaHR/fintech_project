@@ -6,3 +6,6 @@ plotly
 requests
 scipy
 jupyter
+streamlit
+kaleido
+openpyxl
