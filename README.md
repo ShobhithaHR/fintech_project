@@ -172,6 +172,13 @@ dashboard/bluestock_mf_dashboard.pbix
 
 ---
 
+## Project Repository
+
+GitHub Link:
+
+https://github.com/ShobhithaHR/fintech_project
+
 # Author
 
 Shobhitha H R
+
